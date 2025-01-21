@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Gestion de Administrador</string>
+    <string name="club_name">Club Atletico Velez Sarfield</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_btn_text">Ingresar</string>
+    <string name="agregar">Agregar</string>
+    <string name="editar">Editar</string>
+    <string name="agregarPartido">Agregar Partido</string>
+    <string name="partidos">Partidos</string>
+    <string name="editarPartido">Editar Partido</string>
+    <string name="habilitado">Habilitado para compra de entrada</string>
+    <string name="surBaja">Sur Baja</string>
+    <string name="surAlta">Sur Alta</string>
+    <string name="norte">Norte</string>
+    <string name="Este">Este</string>
+    <string name="Oeste">Oeste</string>
+    <string name="Visitante">Visitante</string>
+    <string name="rival_hint">Rival</string>
+    <string name="cantidad_hint">Cantidad</string>
+    <string name="local">Velez</string>
+    <string name="vs">VS</string>
+    <string name="visitante">Boca</string>
+
+</resources>

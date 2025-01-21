@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.velezAdminApp.fragments.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_editarPartido"
+            app:destination="@id/editarPartido" />
+        <action
+            android:id="@+id/action_home_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarPartido"
+        android:name="com.example.velezAdminApp.fragments.EditarPartido"
+        android:label="fragment_editar_partido"
+        tools:layout="@layout/fragment_editar_partido" >
+        <action
+            android:id="@+id/action_editarPartido_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="Partido"
+            app:argType="com.example.velezAdminApp.entidades.Partido"
+            app:nullable="true" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.velezAdminApp.activities.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>

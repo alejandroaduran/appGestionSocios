@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/miPerfilFragment"
+        android:name="com.example.recview.fragments.MiPerfilFragment"
+        android:label="fragment_mi_perfil"
+        tools:layout="@layout/fragment_mi_perfil" >
+        <action
+            android:id="@+id/action_miPerfilFragment_to_carnetFragment"
+            app:destination="@id/carnetFragment" />
+        <action
+            android:id="@+id/action_miPerfilFragment_to_misPagosFragment"
+            app:destination="@id/misPagosFragment" />
+        <action
+            android:id="@+id/action_miPerfilFragment_to_haceteSocioFragment"
+            app:destination="@id/haceteSocioFragment" />
+        <action
+            android:id="@+id/action_miPerfilFragment_to_misEntradasFragment"
+            app:destination="@id/misEntradasFragment" />
+        <action
+            android:id="@+id/action_miPerfilFragment_to_ventaEntradasFragment"
+            app:destination="@id/ventaEntradasFragment" />
+        <action
+            android:id="@+id/action_miPerfilFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/ventaEntradasFragment"
+        android:name="com.example.recview.fragments.VentaEntradasFragment"
+        android:label="fragment_venta_entradas"
+        tools:layout="@layout/fragment_venta_entradas" >
+        <action
+            android:id="@+id/action_ventaEntradasFragment_to_ticketDetail"
+            app:destination="@id/ticketDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.recview.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/haceteSocioFragment"
+        android:name="com.example.recview.fragments.miPerfil.HaceteSocioFragment"
+        android:label="fragment_hacete_socio"
+        tools:layout="@layout/fragment_hacete_socio" />
+    <fragment
+        android:id="@+id/misEntradasFragment"
+        android:name="com.example.recview.fragments.miPerfil.MisEntradasFragment"
+        android:label="fragment_mis_entradas"
+        tools:layout="@layout/fragment_mis_entradas" >
+        <action
+            android:id="@+id/action_misEntradasFragment_to_detalleEntrada"
+            app:destination="@id/detalleEntrada" />
+    </fragment>
+    <fragment
+        android:id="@+id/misPagosFragment"
+        android:name="com.example.recview.fragments.miPerfil.MisPagosFragment"
+        android:label="fragment_mis_pagos"
+        tools:layout="@layout/fragment_mis_pagos" />
+    <fragment
+        android:id="@+id/carnetFragment"
+        android:name="com.example.recview.fragments.miPerfil.CarnetFragment"
+        android:label="fragment_carnet"
+        tools:layout="@layout/fragment_carnet" />
+    <fragment
+        android:id="@+id/ticketDetail"
+        android:name="com.example.recview.fragments.buyTicket.TicketDetail"
+        android:label="fragment_ticket_detail"
+        tools:layout="@layout/fragment_ticket_detail" >
+        <action
+            android:id="@+id/action_ticketDetail_to_confirmarCompra"
+            app:destination="@id/confirmarCompra" />
+        <argument
+            android:name="Partido"
+            app:argType="com.example.recview.entities.Partido" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmarCompra"
+        android:name="com.example.recview.fragments.buyTicket.ConfirmarCompra"
+        android:label="fragment_confirmar_compra"
+        tools:layout="@layout/fragment_confirmar_compra" >
+        <action
+            android:id="@+id/action_confirmarCompra_to_resultadoCompra"
+            app:destination="@id/resultadoCompra" />
+        <action
+            android:id="@+id/action_confirmarCompra_to_ventaEntradasFragment"
+            app:destination="@id/ventaEntradasFragment" />
+        <argument
+            android:name="Ticket"
+            app:argType="com.example.recview.entities.Ticket" />
+        <argument
+            android:name="partido"
+            app:argType="com.example.recview.entities.Partido" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoCompra"
+        android:name="com.example.recview.fragments.buyTicket.ResultadoCompra"
+        android:label="fragment_resultado_compra"
+        tools:layout="@layout/fragment_resultado_compra" >
+        <action
+            android:id="@+id/action_resultadoCompra_to_ventaEntradasFragment"
+            app:destination="@id/ventaEntradasFragment" />
+        <argument
+            android:name="resultadoCompra"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_resultadoCompra_to_confirmarCompra"
+            app:destination="@id/confirmarCompra" />
+        <argument
+            android:name="ticket"
+            app:argType="com.example.recview.entities.Ticket" />
+        <argument
+            android:name="partido"
+            app:argType="com.example.recview.entities.Partido" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleEntrada"
+        android:name="com.example.recview.fragments.miPerfil.DetalleEntrada"
+        android:label="fragment_detalle_entrada"
+        tools:layout="@layout/fragment_detalle_entrada" >
+        <argument
+            android:name="Ticket"
+            app:argType="com.example.recview.entities.Ticket" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.recview.activities.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>
